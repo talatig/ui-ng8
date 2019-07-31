@@ -11,7 +11,7 @@ export class DataService {
 
   private data = {};
   private _store_url = 'assets/data/http/store-list.json'; // Set Store List Data JSON file Url in Data service variable
-  uri = 'http://localhost:4000';   
+  // uri = 'http://localhost:4000';   
   // private storageName: string = "Settings";
 
   // setOption(option, value) {      
@@ -60,11 +60,11 @@ export class DataService {
 
 
     };
-    return this.http.post(`${this.uri}/obdatas/add`, obdata);
+    return this.http.post(`obdatas/add`, obdata);
   }  
 
   getObdata() {
-    return this.http.get(`${this.uri}/obdatas`);
+    return this.http.get(`obdatas`);
   }
 
   updateObdata(id, selectedStoreIndex, selectedStoreName, storeName, storePass, productList, productListExist) {
@@ -76,7 +76,7 @@ export class DataService {
       productList: productList,
       productListExist: productListExist
     };
-    return this.http.post(`${this.uri}/obdatas/update/${id}`, obdata);
+    return this.http.post(`obdatas/update/${id}`, obdata);
   }
 
   // getIssueById(id) {
